@@ -1,0 +1,84 @@
+{
+  "name": "MWSModal",
+  "dashCaseName": "m-w-s-modal",
+  "category": "feedback",
+  "description": "A modal dialog for displaying content that requires user attention or interaction.",
+  "importPath": "@company/mws-common-ui",
+  "version": "1.0.0",
+  "releaseStatus": "stable",
+  "regions": [
+    { "name": "header", "description": "Modal header content", "isDefault": false },
+    { "name": "footer", "description": "Modal footer content", "isDefault": false },
+    { "name": "children", "description": "Modal body content", "isDefault": false }
+  ],
+  "properties": [
+    {
+      "name": "visible",
+      "type": "boolean",
+      "description": "Whether the modal is visible",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Modal title text",
+      "required": true
+    },
+    {
+      "name": "onClose",
+      "type": "function",
+      "description": "Function called when the modal is dismissed",
+      "required": true
+    },
+    {
+      "name": "size",
+      "type": "string",
+      "inlineType": {
+        "name": "MWSModalSize",
+        "type": "union",
+        "values": ["sm", "md", "lg", "fullscreen"]
+      },
+      "optional": true,
+      "description": "The width variant of the modal",
+      "defaultValue": "md"
+    },
+    {
+      "name": "closable",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the modal can be closed with X button",
+      "defaultValue": "true"
+    },
+    {
+      "name": "maskClosable",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether clicking the mask closes the modal",
+      "defaultValue": "true"
+    },
+    {
+      "name": "footer",
+      "type": "node",
+      "optional": true,
+      "description": "Custom footer content"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "description": "Fired when the modal is closed",
+      "cancelable": true
+    },
+    {
+      "name": "onOpen",
+      "description": "Fired when the modal is opened",
+      "cancelable": false
+    }
+  ],
+  "functions": [],
+  "_meta": {
+    "name": "MWSModal",
+    "source": "mock-data",
+    "extracted_at": "2025-01-01T00:00:00.000Z"
+  }
+}

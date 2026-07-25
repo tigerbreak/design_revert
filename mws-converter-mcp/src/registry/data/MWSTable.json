@@ -1,0 +1,88 @@
+{
+  "name": "MWSTable",
+  "dashCaseName": "m-w-s-table",
+  "category": "data-display",
+  "description": "A table component for displaying structured data with sorting, filtering, and pagination support.",
+  "importPath": "@company/mws-common-ui",
+  "version": "1.0.0",
+  "releaseStatus": "stable",
+  "regions": [
+    { "name": "empty", "description": "Content shown when there are no rows", "isDefault": false }
+  ],
+  "properties": [
+    {
+      "name": "columns",
+      "type": "array",
+      "inlineType": {
+        "name": "MWSTableColumn[]",
+        "type": "array",
+        "values": []
+      },
+      "description": "Array of column definitions",
+      "required": true
+    },
+    {
+      "name": "data",
+      "type": "array",
+      "inlineType": {
+        "name": "Record<string, any>[]",
+        "type": "array",
+        "values": []
+      },
+      "description": "Array of data rows",
+      "required": true
+    },
+    {
+      "name": "sortable",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether columns are sortable",
+      "defaultValue": "false"
+    },
+    {
+      "name": "striped",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether to show alternating row colors",
+      "defaultValue": "false"
+    },
+    {
+      "name": "bordered",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether to show borders around cells",
+      "defaultValue": "false"
+    },
+    {
+      "name": "dense",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether to use compact padding",
+      "defaultValue": "false"
+    },
+    {
+      "name": "onSortChange",
+      "type": "function",
+      "optional": true,
+      "description": "Function called when sort changes"
+    }
+  ],
+  "events": [
+    {
+      "name": "onSortChange",
+      "description": "Fired when a column sort is toggled",
+      "cancelable": true
+    },
+    {
+      "name": "onRowClick",
+      "description": "Fired when a row is clicked",
+      "cancelable": true
+    }
+  ],
+  "functions": [],
+  "_meta": {
+    "name": "MWSTable",
+    "source": "mock-data",
+    "extracted_at": "2025-01-01T00:00:00.000Z"
+  }
+}

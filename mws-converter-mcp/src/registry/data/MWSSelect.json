@@ -1,0 +1,85 @@
+{
+  "name": "MWSSelect",
+  "dashCaseName": "m-w-s-select",
+  "category": "forms",
+  "description": "A dropdown select component for choosing one or more options from a list.",
+  "importPath": "@company/mws-common-ui",
+  "version": "1.0.0",
+  "releaseStatus": "stable",
+  "regions": [],
+  "properties": [
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "description": "Label displayed above the select"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "optional": true,
+      "description": "Placeholder text when no option is selected"
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "inlineType": {
+        "name": "MWSSelectOption[]",
+        "type": "array",
+        "values": []
+      },
+      "description": "Array of {label, value, disabled} options",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "description": "Current selected value"
+    },
+    {
+      "name": "onChange",
+      "type": "function",
+      "optional": true,
+      "description": "Function called when selection changes"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether multiple options can be selected",
+      "defaultValue": "false"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the select is disabled",
+      "defaultValue": "false"
+    },
+    {
+      "name": "errorText",
+      "type": "string",
+      "optional": true,
+      "description": "Error message to display"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Fired when the selected value changes",
+      "cancelable": true
+    },
+    {
+      "name": "onFocus",
+      "description": "Fired when the select gains focus",
+      "cancelable": false
+    }
+  ],
+  "functions": [],
+  "_meta": {
+    "name": "MWSSelect",
+    "source": "mock-data",
+    "extracted_at": "2025-01-01T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "mws-converter-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that converts HTML/React UI code to MWS-common-ui design system components",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mws-converter-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && cp -r src/registry/data dist/registry/data",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "mws-common-ui",
+    "react",
+    "design-system",
+    "converter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/parser": "^8.0.4",
+    "@babel/traverse": "^8.0.4",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "cheerio": "^1.2.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.28.0",
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "MWSCard",
+  "dashCaseName": "m-w-s-card",
+  "category": "data-display",
+  "description": "A card component for grouping related content with optional header, body, and footer sections.",
+  "importPath": "@company/mws-common-ui",
+  "version": "1.0.0",
+  "releaseStatus": "stable",
+  "regions": [
+    { "name": "header", "description": "Card header content", "isDefault": false },
+    { "name": "children", "description": "Card body content", "isDefault": true },
+    { "name": "footer", "description": "Card footer content", "isDefault": false }
+  ],
+  "properties": [
+    {
+      "name": "title",
+      "type": "string",
+      "optional": true,
+      "description": "Card title text"
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "optional": true,
+      "description": "Card subtitle text"
+    },
+    {
+      "name": "bordered",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether to show card border",
+      "defaultValue": "true"
+    },
+    {
+      "name": "shadow",
+      "type": "string",
+      "inlineType": {
+        "name": "MWSCardShadow",
+        "type": "union",
+        "values": ["none", "sm", "md", "lg"]
+      },
+      "optional": true,
+      "description": "Shadow level of the card",
+      "defaultValue": "sm"
+    }
+  ],
+  "events": [],
+  "functions": [],
+  "_meta": {
+    "name": "MWSCard",
+    "source": "mock-data",
+    "extracted_at": "2025-01-01T00:00:00.000Z"
+  }
+}

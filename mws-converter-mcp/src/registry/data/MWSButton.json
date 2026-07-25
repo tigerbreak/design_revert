@@ -1,0 +1,112 @@
+{
+  "name": "MWSButton",
+  "dashCaseName": "m-w-s-button",
+  "category": "actions",
+  "description": "A versatile button component for triggering actions. Supports multiple variants, sizes, and states.",
+  "importPath": "@company/mws-common-ui",
+  "version": "1.0.0",
+  "releaseStatus": "stable",
+  "regions": [
+    { "name": "children", "description": "Button label content", "isDefault": true }
+  ],
+  "properties": [
+    {
+      "name": "variant",
+      "type": "string",
+      "inlineType": {
+        "name": "MWSButtonVariant",
+        "type": "union",
+        "values": ["primary", "secondary", "tertiary", "ghost", "danger"]
+      },
+      "optional": true,
+      "description": "The visual style variant of the button",
+      "defaultValue": "primary"
+    },
+    {
+      "name": "size",
+      "type": "string",
+      "inlineType": {
+        "name": "MWSSize",
+        "type": "union",
+        "values": ["sm", "md", "lg"]
+      },
+      "optional": true,
+      "description": "The size of the button",
+      "defaultValue": "md"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the button is disabled",
+      "defaultValue": "false"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether to show a loading spinner",
+      "defaultValue": "false"
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the button should take full width",
+      "defaultValue": "false"
+    },
+    {
+      "name": "iconLeft",
+      "type": "string",
+      "optional": true,
+      "description": "Icon name to show on the left side"
+    },
+    {
+      "name": "iconRight",
+      "type": "string",
+      "optional": true,
+      "description": "Icon name to show on the right side"
+    },
+    {
+      "name": "onPress",
+      "type": "function",
+      "optional": true,
+      "description": "Function called when the button is clicked"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "inlineType": {
+        "name": "MWSButtonType",
+        "type": "union",
+        "values": ["button", "submit", "reset"]
+      },
+      "optional": true,
+      "description": "The HTML button type attribute",
+      "defaultValue": "button"
+    }
+  ],
+  "events": [
+    {
+      "name": "onPress",
+      "description": "Fired when the button is clicked",
+      "cancelable": true
+    },
+    {
+      "name": "onFocus",
+      "description": "Fired when the button gains focus",
+      "cancelable": false
+    },
+    {
+      "name": "onBlur",
+      "description": "Fired when the button loses focus",
+      "cancelable": false
+    }
+  ],
+  "functions": [],
+  "_meta": {
+    "name": "MWSButton",
+    "source": "mock-data",
+    "extracted_at": "2025-01-01T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "name": "MWSTextInput",
+  "dashCaseName": "m-w-s-text-input",
+  "category": "forms",
+  "description": "A text input field for collecting user text input with support for labels, validation, and icons.",
+  "importPath": "@company/mws-common-ui",
+  "version": "1.0.0",
+  "releaseStatus": "stable",
+  "regions": [
+    { "name": "label", "description": "Input label content", "isDefault": false }
+  ],
+  "properties": [
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "description": "Text label displayed above the input"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "optional": true,
+      "description": "Placeholder text displayed when input is empty"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "description": "Current value of the input"
+    },
+    {
+      "name": "onChange",
+      "type": "function",
+      "optional": true,
+      "description": "Function called when the input value changes"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the input is disabled",
+      "defaultValue": "false"
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the input is read-only",
+      "defaultValue": "false"
+    },
+    {
+      "name": "errorText",
+      "type": "string",
+      "optional": true,
+      "description": "Error message to display"
+    },
+    {
+      "name": "iconLeft",
+      "type": "string",
+      "optional": true,
+      "description": "Icon name to show inside the input on the left"
+    },
+    {
+      "name": "size",
+      "type": "string",
+      "inlineType": {
+        "name": "MWSSize",
+        "type": "union",
+        "values": ["sm", "md", "lg"]
+      },
+      "optional": true,
+      "description": "The size of the input",
+      "defaultValue": "md"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "optional": true,
+      "description": "Whether the input is required",
+      "defaultValue": "false"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Fired when the input value changes",
+      "cancelable": true
+    },
+    {
+      "name": "onFocus",
+      "description": "Fired when the input gains focus",
+      "cancelable": false
+    },
+    {
+      "name": "onBlur",
+      "description": "Fired when the input loses focus",
+      "cancelable": false
+    }
+  ],
+  "functions": [],
+  "_meta": {
+    "name": "MWSTextInput",
+    "source": "mock-data",
+    "extracted_at": "2025-01-01T00:00:00.000Z"
+  }
+}
