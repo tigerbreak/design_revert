@@ -122,39 +122,69 @@ Default mappings are defined in `src/mapper/index.ts`:
 | `<div class="modal">` | `MWSModal` | 0.70 |
 | `<form>` | `MWSForm` | 0.50 |
 
-## Adding Real MWS-common-ui Components
+## Integrating Real MWS-common-ui Components
 
-When you get access to real MWS-common-ui, just:
+### 一键扫描（推荐）
 
-1. Create `api.json` files for each component in `src/registry/data/`
-2. Update mapping rules in `src/mapper/index.ts`
-3. Rebuild — no code changes needed
+项目提供了一个自动扫描脚本，直接从组件的 TypeScript 类型定义生成 JSON：
 
-### api.json Format
+```bash
+# 如果你的 mws-common-ui 在 node_modules 里
+npx tsx scripts/scan-mws-package.ts
+
+# 或者指定任意路径
+npx tsx scripts/scan-mws-package.ts /path/to/mws-common-ui
+```
+
+脚本会自动：
+1. 读取包入口的 `.d.ts` 类型定义
+2. 识别每个组件的 Props 接口
+3. 提取 prop 名称、类型、acceptedValues、默认值
+4. 生成 `src/registry/data/*.json`
+5. 按组件名自动分类（Button → actions, Input → forms 等）
+
+组件库升级后只需：
+
+```bash
+npm install @company/mws-common-ui@latest
+npx tsx scripts/scan-mws-package.ts
+npm run build
+```
+
+### 手动添加（单个组件）
+
+每个组件对应一个 JSON 文件放在 `src/registry/data/` 下：
 
 ```json
 {
   "name": "MWSButton",
   "dashCaseName": "m-w-s-button",
   "category": "actions",
-  "description": "A versatile button component",
+  "description": "多功能按钮组件",
   "importPath": "@company/mws-common-ui",
+  "releaseStatus": "stable",
   "properties": [
     {
       "name": "variant",
       "type": "string",
-      "inlineType": {
-        "name": "MWSButtonVariant",
-        "type": "union",
-        "values": ["primary", "secondary", "ghost"]
-      },
-      "optional": true,
-      "description": "Visual style variant",
-      "defaultValue": "primary"
+      "description": "按钮视觉风格",
+      "defaultValue": "primary",
+      "acceptedValues": ["primary", "secondary", "ghost"],
+      "required": false
     }
-  ]
+  ],
+  "events": ["onPress", "onLongPress"]
 }
 ```
+
+| 字段 | 说明 | 从哪里拿 |
+|------|------|---------|
+| `name` | React 组件名 | 组件源码 `export const MWSButton` |
+| `properties[].name` | prop 名 | Props 接口的字段名 |
+| `properties[].type` | 类型 | 接口里的类型标注 |
+| `properties[].acceptedValues` | 可选值列表 | union 类型如 `'primary' \| 'secondary'` |
+| `properties[].defaultValue` | 默认值 | 代码里的 `defaultProps` |
+| `events` | 事件回调 | 以 `on` 开头的 prop |
 
 ## License
 
